@@ -3,6 +3,8 @@ import { StyleSheet,Dimensions } from "react-native";
 const DeviceFullWidth = Dimensions.get('window').width;
 const DeviceFullHeight = Dimensions.get('window').height;
 
+const HEIGHT_BUTTON=45;
+
 
 const styles = StyleSheet.create({
     container:{
@@ -29,8 +31,7 @@ const styles = StyleSheet.create({
     },
     title:{
         fontSize:14,
-        fontFamily:'IRANSansMobile',
-        fontWeight:'500',
+        fontFamily:'IRANSansMobile_Bold',
          color:'white',
     },
     text:{
@@ -38,7 +39,16 @@ const styles = StyleSheet.create({
         fontFamily:'IRANSansMobile',
 
         // color:'white',
-    }
+    },
+    touchContainer:{
+            alignItems:'center',
+            backgroundColor:'#0ca798',
+            borderRadius:20,
+            width:'90%',
+            height:HEIGHT_BUTTON,
+            padding:10,
+            margin:5,
+            }
 });
 
 export default styles;

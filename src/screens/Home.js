@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, TouchableOpacity, StatusBar, FlatList } from "react-native";
+import { View, KeyboardAvoidingView,  StatusBar, FlatList } from "react-native";
 
 import Container from "../components/Container";
 import { ImageBackgrounds } from "../components/Images";
@@ -32,6 +32,7 @@ const TEMP_LOGO_TITLE = 'Dalida';
 const TEMP_LOGO_TEXT = 'خودآموز حرفه ای نقاشی';
 const TEMP_CARD_TITLE='در 30 جلسه طراحی رو یاد بگیر!';
 const TEMP_CARD_TEXT='بر اساس یک برنامه آموزشی هدفمند می تونی نقاشی رو از پایه شروع کنی و تا طراحی چهره پیشرفته ادامه بدی';
+const TEMP_BUTTON_TEXXT = 'شروع!'
 
 class Home extends Component {
     handlePressSearch = () => {
@@ -46,6 +47,7 @@ class Home extends Component {
         return (
             <Container>
                 <ImageBackgrounds>
+                    {/* <KeyboardAvoidingView behavior='padding'> */}
                     <View style={{ flex: 1 }}>
                         <InputWithButton
                             buttonText={TEMP_BUTTON_SEARCH}
@@ -86,9 +88,11 @@ class Home extends Component {
                         <Cards
                         title={TEMP_CARD_TITLE}
                         text={TEMP_CARD_TEXT}
+                        textBtn={TEMP_BUTTON_TEXXT}
+                        isButton={true}
                         />
                     </View> */}
-
+{/* </KeyboardAvoidingView> */}
                 </ImageBackgrounds>
 
             </Container>
