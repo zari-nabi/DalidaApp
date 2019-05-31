@@ -11,6 +11,7 @@ import {Platform, StyleSheet, Text, View} from 'react-native';
 
 import Home from "./src/screens/Home";
 import CourseList from './src/screens/CourseList';
+import Options from './src/screens/Options';
 
 // const instructions = Platform.select({
 //   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -25,7 +26,8 @@ export default class App extends Component<Props> {
     return (
       <View style={styles.container}>
         {/* <Home/> */}
-        <CourseList/>
+        {/* <CourseList/> */}
+        <Options/>
       </View>
     );
   }
