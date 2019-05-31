@@ -1,16 +1,19 @@
 import React from "react";
 import { View, TextInput, TouchableOpacity, Text } from "react-native";
 import PropTypes from "prop-types";
+
+import { Icons } from "../Icons";
 import styles from "./styles";
 
 
 
 const InputWithButton = (props) => {
-    const { onPress, buttonText,text }=props;
+    const { onPress, buttonText,text,isText=false,iconName }=props;
     return(
     <View style={styles.container}>
         <TouchableOpacity style={styles.buttonContainer} onPress={onPress}>
-            <Text style={styles.buttonText}>{buttonText}</Text>
+            {isText ? <Text style={styles.buttonText}>{buttonText}</Text> : null }
+            <Icons name={iconName} />
         </TouchableOpacity>
         <View style={styles.border} />
         <TextInput 

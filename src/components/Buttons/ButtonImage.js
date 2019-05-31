@@ -3,11 +3,14 @@ import { TouchableOpacity,Text,Image,View } from "react-native";
 
 import styles from "./styles";
 
-const ButtonImage=({title,imageSource})=>(
+const ButtonImage=({title,text,imageSource,onPress})=>(
     <View style={styles.container}>
-        <TouchableOpacity style={styles.wrapper}>
+        <TouchableOpacity style={styles.wrapper} onPress={onPress}>
         <Image source={imageSource} style={styles.image} resizeMode='cover'/>
-        <Text style={styles.title}>{title}</Text>
+        <View>
+            <Text style={styles.title}>{title}</Text>
+            <Text style={[styles.text,{color:'white'}]}>{text}</Text>
+        </View>
 
     </TouchableOpacity>
     </View>

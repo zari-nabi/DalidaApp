@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity } from "react-native";
 import PropTypes from "prop-types";
 import { Avatar } from "react-native-elements";
 
-import styles from "./style";
+import styles from "./styles";
 
 const ListItem = ({
     text,

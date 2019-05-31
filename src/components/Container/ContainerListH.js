@@ -4,15 +4,15 @@ import PropTypes from "prop-types";
 
 import styles from "./styles";
 
-const Container = ({ children }) => (
-    <View style={styles.container}>
+const ContainerListH = ({ children }) => (
+    <View style={styles.containerListH}>
         {children}
     </View>
 );
 
-export default Container;
+export default ContainerListH;
 
-Container.propTypes = {
+ContainerListH.propTypes = {
     children: PropTypes.any,
 }
 

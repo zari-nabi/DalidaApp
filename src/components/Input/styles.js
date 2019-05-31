@@ -45,5 +45,6 @@ export default StyleSheet.create({
         height:INPUT_HEIGHT,
         width:StyleSheet.hairlineWidth,
         backgroundColor:'#999999'
-    }
+    },
+
 })

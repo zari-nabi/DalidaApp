@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { View, KeyboardAvoidingView,  StatusBar, FlatList } from "react-native";
+import { View, KeyboardAvoidingView,  StatusBar, FlatList,ScrollView } from "react-native";
+import PropTypes from "prop-types";
 
 import Container from "../components/Container";
 import { ImageBackgrounds } from "../components/Images";
@@ -11,14 +12,15 @@ import { Cards } from "../components/Cards";
 const items = [
     {
         key: '1',
-        title: 'گالری تصاویر',
-        image: '../assets/images/gallery.png',
-    },
-    {
-        key: '2',
         title: 'آموزش همراه مربی',
         image: '../assets/images/tutorial.png',
     },
+    {
+        key: '2',
+        title: 'گالری تصاویر',
+        image: '../assets/images/gallery.png',
+    },
+   
     {
         key: '3',
         title: 'درباره دالیدا',
@@ -35,12 +37,21 @@ const TEMP_CARD_TEXT='بر اساس یک برنامه آموزشی هدفمند 
 const TEMP_BUTTON_TEXXT = 'شروع!'
 
 class Home extends Component {
+    static propTypes={
+        navigation:PropTypes.object,
+    }
     handlePressSearch = () => {
         console.log('press search');
+        this.props.navigation.navigate('CourseList');
     }
 
     handleTextChange = () => {
         console.log('textchange', text);
+    }
+
+    handlePress = () => {
+        console.log('press button');
+        this.props.navigation.navigate('Options');
     }
 
     render() {
@@ -52,8 +63,9 @@ class Home extends Component {
                         <InputWithButton
                             buttonText={TEMP_BUTTON_SEARCH}
                             text={TEMP_INPUT_TEXT}
-                            onPress={this.handlePressSearch}
-                            onTextChange={this.handleTextChange} />
+                            onPress={(this.handlePressSearch)}
+                            onTextChange={this.handleTextChange}
+                            iconName='search' />
                     </View>
                     <View style={{ flex: 2 }}>
                         <LogoWithText title={TEMP_LOGO_TITLE} text={TEMP_LOGO_TEXT} />
@@ -72,17 +84,25 @@ class Home extends Component {
                     keyExtractor={item => item.id}
                     ItemSeparatorComponent={HorizontalThinSeparator}
                 /> */}
-                    <View style={{ flex: 1 }}>
+               
+                    <ScrollView  showsHorizontalScrollIndicator={false} style={{  flex:1, paddingHorizontal:120, marginBottom:30}} horizontal={true}>
+                        <View style={{ width:1000,flex:1,flexDirection:'row',alignContent:'center', alignItems:'center',justifyContent:'center'}}> 
                         <FlatList
                             horizontal={true}
                             pagingEnabled={true}
-                            showsHorizontalScrollIndicator={true}
-                            initialScrollIndex={1}
+                            showsHorizontalScrollIndicator={false}
+                            initialScrollIndex={0}
                             data={items}
                             keyExtractor={(item) => item.key}
-                            renderItem={({ item }) => <ButtonImage title={item.title} imageSource={require('../assets/images/home.jpg')} />}
+                            renderItem={({ item }) =>
+                             <ButtonImage
+                              title={item.title}
+                               text={item.title}
+                                imageSource={require('../assets/images/home.jpg')}
+                                onPress={this.handlePress} />}
                         />
                     </View>
+                    </ScrollView>
 
                     {/* <View style={{flex:1}}>
                         <Cards

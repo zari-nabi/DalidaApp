@@ -1,31 +1,33 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
+
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 
-import Home from "./src/screens/Home";
-import CourseList from './src/screens/CourseList';
-import Options from './src/screens/Options';
+import Home from "./screens/Home";
+import CourseList from './screens/CourseList';
+import Options from './screens/Options';
+
+import RootStack from "./config/routes";
+
 
 
 
 export default class App extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        {/* <Home/> */}
-        {/* <CourseList/> */}
-        <Options/>
-      </View>
+        <RootStack/>
+     
     );
   }
 }
+
+// const AppContainer = createAppContainer(RootStack);
+
+// export default class App extends React.Component {
+//   render() {
+//     return <AppContainer />;
+//   }
+// }
 
 
 
