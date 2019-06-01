@@ -7,6 +7,7 @@ import Home from "./screens/Home";
 import CourseList from './screens/CourseList';
 import Options from './screens/Options';
 
+import { AlertProvider,connectAlert } from "./components/Alert";
 import RootStack from "./config/routes";
 
 
@@ -15,7 +16,7 @@ import RootStack from "./config/routes";
 export default class App extends Component {
   render() {
     return (
-        <RootStack/>
+       <AlertProvider><RootStack/></AlertProvider> 
      
     );
   }

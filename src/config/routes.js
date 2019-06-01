@@ -1,4 +1,5 @@
 import React from "react";
+import { StatusBar } from "react-native";
 import { createStackNavigator, createAppContainer } from "react-navigation";
 
 import Home from "../screens/Home";
@@ -15,6 +16,9 @@ const RootStack = createStackNavigator(
           },
           CourseList: {
             screen: CourseList,
+            navigationOptions:({navigation}) =>({
+              headerTitle:navigation.state.params.title,
+            }),
            
           },
           Options: {
@@ -25,6 +29,10 @@ const RootStack = createStackNavigator(
     },
     {
       initialRouteName: 'Home',
+    },{
+      mode:'modal',
+      cardStyle:{paddingTop:StatusBar.currentHeight},
+      headerMode:'none',
     }
   );
 

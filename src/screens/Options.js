@@ -1,19 +1,28 @@
 import React, { Component } from "react";
-import { View, ScrollView, StatusBar } from "react-native";
+import { View, ScrollView, StatusBar,Linking } from "react-native";
+import PropTypes from "prop-types";
+
 import { ListItemIcon } from "../components/List";
 import { Separator } from "../components/Separator";
+import { connectAlert } from "../components/Alert";
 
 const ICON_COLOR = '#868686';
 const ICON_COLOR_Selected = '#22c9bb';
 const ICON_SIZE = 23;
 
 class Options extends Component {
+    static propTypes={
+        navigation:PropTypes.object,
+        alertWithType:PropTypes.func,
+    }
+
     handleThemePress = () => {
-        console.log('theme press');
+        this.props.navigation.goBack(null);
+
     };
 
     handleSitePress = () => {
-        console.log('site press');
+        Linking.openURL('ahttp://www.dalida.ir/courses').catch(()=>this.props.alertWithType('error!','sorry','can not open'));
     };
 
     render() {
@@ -50,4 +59,4 @@ class Options extends Component {
     }
 };
 
-export default Options;
+export default connectAlert(Options) ;

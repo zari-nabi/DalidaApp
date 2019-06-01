@@ -42,7 +42,7 @@ class Home extends Component {
     }
     handlePressSearch = () => {
         console.log('press search');
-        this.props.navigation.navigate('CourseList');
+        this.props.navigation.navigate('CourseList',{title:'دوره ها'});
     }
 
     handleTextChange = () => {
@@ -51,7 +51,7 @@ class Home extends Component {
 
     handlePress = () => {
         console.log('press button');
-        this.props.navigation.navigate('Options');
+        this.props.navigation.navigate('Options',{title:'تنظیمات'});
     }
 
     render() {
