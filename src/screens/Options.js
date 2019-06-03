@@ -22,7 +22,8 @@ class Options extends Component {
     };
 
     handleSitePress = () => {
-        Linking.openURL('ahttp://www.dalida.ir/courses').catch(()=>this.props.alertWithType('error!','sorry','can not open'));
+        Linking.openURL('http://www.dalida.ir/courses').catch(()=>
+        this.props.alertWithType('error','sorry','this site can not be open!'));
     };
 
     render() {
