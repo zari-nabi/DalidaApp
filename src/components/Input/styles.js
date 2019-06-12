@@ -41,6 +41,15 @@ export default StyleSheet.create({
         color:'#444444',
     },
 
+    viewText: {
+        flex:1,
+        justifyContent:'center',
+        paddingVertical: 12,
+        paddingHorizontal:20,
+        width: DeviceFullWidth,
+        
+    },
+
     border: {
         height:INPUT_HEIGHT,
         width:StyleSheet.hairlineWidth,

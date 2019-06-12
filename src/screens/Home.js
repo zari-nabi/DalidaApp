@@ -51,7 +51,7 @@ class Home extends Component {
 
     handlePress = () => {
         console.log('press button');
-        this.props.navigation.navigate('Options',{title:'تنظیمات'});
+        this.props.navigation.navigate('Profile',{title:'پروفایل'});
     }
 
     render() {
